@@ -22,7 +22,7 @@ const Nav = () => {
 
                 {/* START: Nav logo */}
 
-                <span className='flex font-bold ml-4 sm:mr-2 text-4xl text-slate-800 uppercase font-baunk text-red-500'>
+                <span className='flex font-bold ml-4 sm:mr-2 text-4xl uppercase font-baunk text-red-500 hover:text-black transition duration-500'>
 
                     <a href="https://github.com/cal-dev-lab" target='_blank' rel="noreferrer nooopener">
 
@@ -89,7 +89,7 @@ const Nav = () => {
 
             <div className='md:hidden mr-4' onClick={handleClick}>
 
-                {!nav ? <MenuIcon className='h-10 w-10 text-slate-800 cursor-pointer' /> : <XIcon className='h-10 w-10 text-slate-800 cursor-pointer text-red-500' />}
+                {!nav ? <MenuIcon className='h-10 w-10 text-slate-800 cursor-pointer hover:text-red-500 transition duration-500' /> : <XIcon className='h-10 w-10 cursor-pointer text-red-500 hover:text-black transition duration-500' />}
 
             </div>
 
