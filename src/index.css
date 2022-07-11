@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "AVENIR";
+    src: url("../public/fonts/avenir/AVENIR.otf");
+}
+
+@font-face {
+    font-family: "BAUNK";
+    src: url("../public/fonts/baunk/BAUNK.otf");
+}
