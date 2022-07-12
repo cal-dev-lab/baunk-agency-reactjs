@@ -99,27 +99,27 @@ const Nav = () => {
 
         {/* START: Mobile nav items */}
 
-        <ul className={!nav ? 'hidden' : 'absolute bg-black text-white w-full px-8 py-2 transition duration-500'}>
+        <ul className={!nav ? 'hidden' : 'absolute bg-white text-white w-full px-8 py-2 transition duration-500 backdrop-filter backdrop-blur-lg bg-opacity-30'}>
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-red-500 transition duration-500 font-avenir font-bold'>
+            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500  transition duration-500 font-avenir font-bold'>
                 <Link onClick={handleClose}>
                     baunk:blog
                 </Link>
             </li>
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-red-500 transition duration-500 font-avenir font-bold'>
+            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
                 <Link onClick={handleClose}>
                     baunk:talent
                 </Link>
             </li>
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-red-500 transition duration-500 font-avenir font-bold'>
+            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
                 <Link onClick={handleClose}>
                     baunk:about
                 </Link>
             </li>
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-red-500 transition duration-500 font-avenir font-bold'>
+            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
                 <Link onClick={handleClose}>
                     baunk:contact
                 </Link>
