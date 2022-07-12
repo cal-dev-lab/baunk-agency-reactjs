@@ -14,7 +14,7 @@ const Card = ({ article }) => {
           <img src={imageUrl} alt={article.attributes.image.url} className="h-64 w-full object-cover" />
         </div>
         <div className="py-2">
-          <p id="category" className="text-xl font-avenir py-2">
+          <p id="category" className="text-xl font-avenir py-2 text-red-500">
             {article.attributes.category.data.attributes.name}
           </p>
           <p id="title" className="text-2xl font-avenir font-bold">
