@@ -6,8 +6,8 @@ import ARTICLES_QUERY from "../../queries/article/articles";
 const Home = () => {
   return (
     <div>
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
+      <div>
+        <div>
           <Query query={ARTICLES_QUERY}>
             {({ data: { articles } }) => {
               return <Articles articles={articles.data} />;
