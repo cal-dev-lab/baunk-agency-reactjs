@@ -1,0 +1,8 @@
+{
+    "provider": "cloudinary",
+    "providerOptions": {
+        "cloud_name": "cal-dev-lab",
+        "api_key": "625892745595621",
+        "api_secret": "Al1D0Z_egtzf4YZkYuQyinYHRec"
+    }
+}
