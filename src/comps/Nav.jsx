@@ -14,9 +14,9 @@ const Nav = () => {
 
     return (
     
-    <div className='h-20 z-10 sticky top-0 bg-white border-2 border-slate-900/[0.06]'>
+    <div className='h-20 z-10 sticky top-0 bg-white border-2 border-slate-900/[0.06] backdrop-filter backdrop-blur-lg bg-opacity-30'>
 
-        <div className='max-w-7xl mx-auto px-2 flex justify-between items-center full h-full'>
+        <div className='max-w-7xl mx-auto px-2 flex justify-between items-center h-full'>
 
             <div className='flex items-center align-middle'>
 
