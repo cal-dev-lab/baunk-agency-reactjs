@@ -1,8 +1,11 @@
 import React from "react";
 import { useParams } from "react-router";
 import Query from "../../comps/Query";
+import ReactMarkdown from "react-markdown";
+import Moment from "react-moment";
+import rehypeRaw from "rehype-raw"
 
-import ARTICLE_QUERY from "../../queries/article/articles";
+import ARTICLE_QUERY from "../../queries/article/article";
 
 const Article = () => {
   let { slug } = useParams();
@@ -17,14 +20,33 @@ const Article = () => {
               : process.env.REACT_APP_BACKEND_URL +
                 articles.data[0].attributes.image.data.attributes.url;
 
-
           return (
             <div>
-                <img src={imageUrl} />
-                <h1>{articles.data[0].attributes.title}</h1>
+              <div
+                id="banner"
+                className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
+                data-src={imageUrl}
+                data-srcset={imageUrl}
+                data-uk-img
+              >
+                
+              </div>
+
+              <h1>{articles.data[0].attributes.title}</h1>
+              <img src={imageUrl} />
+
+              <div className="">
+                <div className="">
+                  <ReactMarkdown children={articles.data[0].attributes.content} rehypePlugins={[rehypeRaw]} />
+                  <p>
+                    <Moment format="MMM Do YYYY">
+                      {articles.data[0].attributes.published_at}
+                    </Moment>
+                  </p>
+                </div>
+              </div>
             </div>
           );
-
         }
       }}
     </Query>
