@@ -1,29 +1,23 @@
 import React from "react";
 
+// Components
 import Nav from "../../comps/Nav";
-import ArticleNav from "../../comps/ArticleNav";
-import Articles from "../../containers/Articles";
-import Article from "../../containers/Article";
-import Category from "../../containers/Category";
-
-import PageNotFound from "../../comps/PageNotFound";
-
-import { Routes, Route } from "react-router-dom";
-
+import Home from "../../comps/Home";
 
 const App = () => {
+
     return (
+
         <div className="App">
+
             <Nav />
-            <ArticleNav />
-            <Routes>
-                <Route path="/" element={<Articles />} exact />
-                <Route path="/article/:slug" element={<Article />} exact />
-                <Route path="/category/:slug" element={<Category />} exact />
-                <Route path="/*" component={PageNotFound} exact />
-            </Routes>
+
+            <Home />
+
         </div>
+
     );
+
 }
 
 export default App;
