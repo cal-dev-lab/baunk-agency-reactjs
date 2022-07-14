@@ -11,6 +11,7 @@ const PageNotFound = () => {
     console.log(`No route found for: ${location.pathname}`);
 
     return (
+
         <>
 
             <div className='max-w-7xl mx-auto py-2 min-h-screen flex items-center justify-center'>
@@ -32,7 +33,9 @@ const PageNotFound = () => {
             </div>
 
         </>
+
     )
+    
 }
 
 export default PageNotFound;
