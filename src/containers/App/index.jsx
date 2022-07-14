@@ -8,7 +8,7 @@ import Category from "../../containers/Category";
 
 import PageNotFound from "../../comps/PageNotFound";
 
-import {Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 
 const App = () => {
