@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Link, animateScroll as scroll, } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import Border from "../images/Border-5.svg";
 
 const Nav = () => {
@@ -24,11 +24,11 @@ const Nav = () => {
 
                 <div className='flex font-bold ml-4 sm:mr-2 text-4xl uppercase font-baunk text-red-500 hover:text-black transition duration-500'>
 
-                    <a href="/">
+                    <Link to="/">
 
                         baunk
 
-                    </a>
+                    </Link>
 
                 </div>
 
@@ -40,7 +40,7 @@ const Nav = () => {
 
                     <div className='flex items-center justify-center ml-4'>
 
-                        <img className='h-28 w-28' src={Border} />
+                        <img className='h-28 w-28' src={Border} alt="" />
 
                     </div>
                     
@@ -56,25 +56,25 @@ const Nav = () => {
             <ul className='hidden md:flex text-slate-800 ml-10'>
 
                 <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:underline hover:text-red-500'>
-                    <Link to="about">
+                    <Link to="/blog">
                         baunk:blog
                     </Link>
                 </li>
 
                 <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:underline hover:text-red-500'>
-                    <Link to="about">
+                    <Link to="/talent">
                         baunk:talent
                     </Link>
                 </li>
 
                 <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:underline hover:text-red-500'>
-                    <Link to="about">
+                    <Link to="/about">
                         baunk:about
                     </Link>
                 </li>
 
                 <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:text-red-500 hover:underline '>
-                    <Link to="projects">
+                    <Link to="/projects">
                         baunk:contact
                     </Link>
                 </li>
@@ -102,25 +102,25 @@ const Nav = () => {
         <ul className={!nav ? 'hidden' : 'absolute bg-white text-white w-full px-8 py-2 transition duration-500 backdrop-filter backdrop-blur-lg bg-opacity-30'}>
 
             <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500  transition duration-500 font-avenir font-bold'>
-                <Link onClick={handleClose}>
+                <Link to='/' onClick={handleClose}>
                     baunk:blog
                 </Link>
             </li>
 
             <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
-                <Link onClick={handleClose}>
+                <Link to='/' onClick={handleClose}>
                     baunk:talent
                 </Link>
             </li>
 
             <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
-                <Link onClick={handleClose}>
+                <Link to='/' onClick={handleClose}>
                     baunk:about
                 </Link>
             </li>
 
             <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
-                <Link onClick={handleClose}>
+                <Link to='/' onClick={handleClose}>
                     baunk:contact
                 </Link>
             </li>
