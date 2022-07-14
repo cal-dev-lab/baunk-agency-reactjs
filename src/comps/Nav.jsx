@@ -22,15 +22,15 @@ const Nav = () => {
 
                 {/* START: Nav logo */}
 
-                <span className='flex font-bold ml-4 sm:mr-2 text-4xl uppercase font-baunk text-red-500 hover:text-black transition duration-500'>
+                <div className='flex font-bold ml-4 sm:mr-2 text-4xl uppercase font-baunk text-red-500 hover:text-black transition duration-500'>
 
-                    <a href="https://github.com/cal-dev-lab" target='_blank' rel="noreferrer nooopener">
+                    <a href="/">
 
                         baunk
 
                     </a>
 
-                </span>
+                </div>
 
                 {/* END: Nav logo */}
 
