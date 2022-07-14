@@ -20,7 +20,7 @@ const App = () => {
                 <Route path="/" element={<Articles />} exact />
                 <Route path="/article/:slug" element={<Article />} exact />
                 <Route path="/category/:slug" element={<Category />} exact />
-                <Route component={PageNotFound} />
+                <Route path="/*" component={PageNotFound} exact />
             </Routes>
         </div>
     );
