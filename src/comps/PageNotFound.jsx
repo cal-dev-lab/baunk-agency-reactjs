@@ -19,7 +19,7 @@ const PageNotFound = () => {
 
                     <img src={Pnf} alt="" className='h-60 w-full -mt-20' />
 
-                    <h3 className='font-avenir mt-16'>No page found for: <code className='p-2 bg-red-50 rounded-lg'>{location.pathname}</code></h3>
+                    <h3 className='font-avenir mt-16'>Oops! Didn't expect that...</h3>
 
                     <Link to='/'>
                         <p className='font-avenir text-xl mt-10 text-red-500 underline'>
