@@ -21,6 +21,8 @@ const PageNotFound = () => {
 
                     <h3 className='font-avenir mt-16'>Oops! Didn't expect that...</h3>
 
+                    <p>{location.pathname}</p>
+
                     <Link to='/'>
                         <p className='font-avenir text-xl mt-10 text-red-500 underline'>
                             &larr; Let's take you back home
