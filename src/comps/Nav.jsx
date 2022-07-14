@@ -3,6 +3,9 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
 import Border from "../images/Border-5.svg";
 
+import CATEGORIES_QUERY from "../queries/categories/categories";
+import Query from '../comps/Query';
+
 const Nav = () => {
 
     // Set nav state
@@ -53,37 +56,49 @@ const Nav = () => {
 
             {/* START: Desktop nav items */}
 
-            <ul className='hidden md:flex text-slate-800 ml-10'>
+            <div>
 
-                <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:underline hover:text-red-500'>
-                    <Link to="/blog">
-                        baunk:blog
-                    </Link>
-                </li>
+                <Query query={CATEGORIES_QUERY} id={null}>
 
-                <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:underline hover:text-red-500'>
-                    <Link to="/talent">
-                        baunk:talent
-                    </Link>
-                </li>
+                    {({ data: { categories } }) => {
 
-                <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:underline hover:text-red-500'>
-                    <Link to="/about">
-                        baunk:about
-                    </Link>
-                </li>
+                        return (
 
-                <li className='text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:text-red-500 hover:underline '>
-                    <Link to="/projects">
-                        baunk:contact
-                    </Link>
-                </li>
+                            <div className='hidden md:flex'>
 
-            </ul>
+                                <ul className="flex">
+
+                                    {categories.data.map((category) => {
+
+                                        return (
+
+                                            <li key={category.attributes.slug} className="text-black pr-6 cursor-pointer transition duration-500 font-avenir font-bold hover:underline hover:text-red-500">
+
+                                                <Link
+                                                    to={`/category/${category.attributes.slug}`}
+                                                >
+                                                    {category.attributes.name}
+                                                </Link>
+
+                                            </li>
+
+                                        )
+
+                                    })}
+
+                                </ul>
+
+                            </div>
+
+                        )
+
+                    }}
+
+                </Query>
+
+            </div>
 
             {/* END: Desktop nav items */}
-
-            
 
             {/* START: Mobile menu open/close toggle */}
 
@@ -99,33 +114,41 @@ const Nav = () => {
 
         {/* START: Mobile nav items */}
 
-        <ul className={!nav ? 'hidden' : 'absolute bg-white text-white w-full px-8 py-2 transition duration-500 backdrop-filter backdrop-blur-lg bg-opacity-30'}>
+        <div>
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500  transition duration-500 font-avenir font-bold'>
-                <Link to='/' onClick={handleClose}>
-                    baunk:blog
-                </Link>
-            </li>
+                <Query query={CATEGORIES_QUERY} id={null}>
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
-                <Link to='/' onClick={handleClose}>
-                    baunk:talent
-                </Link>
-            </li>
+                    {({ data: { categories } }) => {
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
-                <Link to='/' onClick={handleClose}>
-                    baunk:about
-                </Link>
-            </li>
+                        return (
 
-            <li className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500 transition duration-500 font-avenir font-bold'>
-                <Link to='/' onClick={handleClose}>
-                    baunk:contact
-                </Link>
-            </li>
+                            <ul className={!nav ? 'hidden' : 'absolute bg-white text-white w-full px-8 py-2 transition duration-500 backdrop-filter backdrop-blur-lg bg-opacity-30'}>
 
-        </ul>
+                                    {categories.data.map((category) => {
+
+                                        return (
+
+                                            <li key={category.attributes.slug} className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500  transition duration-500 font-avenir font-bold'>
+
+                                                <Link to={`/category/${category.attributes.slug}`}>
+                                                    baunk:{category.attributes.name}
+                                                </Link>
+
+                                            </li>
+
+                                        )
+
+                                    })}
+
+                                </ul>
+
+                            )
+
+                        }}
+
+                </Query>
+
+            </div>
 
         {/* END: Mobile nav items */}
 
