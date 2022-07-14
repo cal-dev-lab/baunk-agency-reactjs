@@ -1,5 +1,4 @@
 import React from 'react'
-import ArticleNav from '../ArticleNav';
 import Blog from '../Blog';
 
 const Home = () => {
@@ -7,8 +6,7 @@ const Home = () => {
     return (
 
         <>
-        
-            <ArticleNav />
+
             <Blog />
         
         </>
