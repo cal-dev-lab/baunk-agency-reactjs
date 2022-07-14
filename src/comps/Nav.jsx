@@ -130,7 +130,7 @@ const Nav = () => {
 
                                             <li key={category.attributes.slug} className='text-2xl border-b-2 border-zinc-300 w-full my-5 cursor-pointer hover:text-black text-red-500  transition duration-500 font-avenir font-bold'>
 
-                                                <Link to={`/category/${category.attributes.slug}`}>
+                                                <Link onClick={handleClose} to={`/category/${category.attributes.slug}`}>
                                                     baunk:{category.attributes.name}
                                                 </Link>
 
