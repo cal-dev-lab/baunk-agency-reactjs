@@ -11,9 +11,13 @@ const Article = () => {
   let { slug } = useParams();
 
   return (
+
     <Query query={ARTICLE_QUERY} slug={slug}>
+
       {({ data: { articles } }) => {
+
         if (articles.data.length) {
+
           const imageUrl =
             process.env.NODE_ENV !== "development"
               ? articles.data[0].attributes.image.data.attributes.url
@@ -21,36 +25,41 @@ const Article = () => {
                 articles.data[0].attributes.image.data.attributes.url;
 
           return (
+
             <div>
-              <div
-                id="banner"
-                className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-                data-src={imageUrl}
-                data-srcset={imageUrl}
-                data-uk-img
-              >
-                
-              </div>
 
               <h1>{articles.data[0].attributes.title}</h1>
+
+              <p>
+                <Moment format="MMM Do YYYY">
+                  {articles.data[0].attributes.published_at}
+                </Moment>
+              </p>
+              
               <img src={imageUrl} />
 
               <div className="">
+
                 <div className="">
+
                   <ReactMarkdown children={articles.data[0].attributes.content} rehypePlugins={[rehypeRaw]} />
-                  <p>
-                    <Moment format="MMM Do YYYY">
-                      {articles.data[0].attributes.published_at}
-                    </Moment>
-                  </p>
+
                 </div>
+
               </div>
+
             </div>
+
           );
+
         }
+
       }}
+
     </Query>
+  
   );
+
 };
 
 export default Article;
