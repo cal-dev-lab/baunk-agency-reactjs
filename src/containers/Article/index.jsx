@@ -48,7 +48,7 @@ const Article = () => {
                 </Moment>
               </p>
               
-              <img src={imageUrl} alt={articles.data[0].attributes.title} />
+              <img className='rounded-tl-3xl rounded-br-3xl' src={imageUrl} alt={articles.data[0].attributes.title} />
 
               <div className="py-16">
 
