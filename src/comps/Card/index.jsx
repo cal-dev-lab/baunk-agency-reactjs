@@ -11,7 +11,7 @@ const Card = ({ article }) => {
     <Link to={`/article/${article.attributes.slug}`}>
       <div className="group rounded-lg">
         <div className="w-full rounded-t-lg bg-transparent">
-          <img src={imageUrl} alt={article.attributes.image.url} className="h-64 w-full object-cover" />
+          <img src={imageUrl} alt={article.attributes.image.url} className="h-64 w-full object-cover rounded-tl-3xl rounded-br-3xl" />
         </div>
         <div className="py-2">
           <p id="category" className="text-xl font-avenir py-2 text-red-500">
