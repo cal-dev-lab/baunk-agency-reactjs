@@ -4,8 +4,10 @@ import Query from "../../comps/Query";
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import rehypeRaw from "rehype-raw"
+import { Link } from "react-router-dom";
 
 import ARTICLE_QUERY from "../../queries/article/article";
+
 
 const Article = () => {
   let { slug } = useParams();
@@ -29,6 +31,15 @@ const Article = () => {
             <div className="max-w-7xl mx-auto flex-col px-6 h-screen">
 
               <div className="py-12">
+
+
+                <div className='pb-16'>
+                  <p className="font-semibold underline text-red-500 hover:text-black">
+                    <Link to="/">
+                      &larr; Home
+                    </Link>
+                  </p>
+                </div>
               
                 <h1 className="font-baunk text-6xl md:text-7xl lg:text-9xl">
                   {articles.data[0].attributes.title}
@@ -52,7 +63,7 @@ const Article = () => {
 
               <div className="py-16">
 
-                <div className="">
+                <div className="font-avenir text-lg">
 
                   <ReactMarkdown children={articles.data[0].attributes.content} rehypePlugins={[rehypeRaw]} />
 
