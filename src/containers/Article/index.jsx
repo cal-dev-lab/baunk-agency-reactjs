@@ -26,19 +26,31 @@ const Article = () => {
 
           return (
 
-            <div>
+            <div className="max-w-7xl mx-auto flex-col px-6 h-screen">
 
-              <h1>{articles.data[0].attributes.title}</h1>
+              <div className="py-12">
+              
+                <h1 className="font-baunk text-6xl md:text-7xl lg:text-9xl">
+                  {articles.data[0].attributes.title}
+                </h1>
 
-              <p>
-                <Moment format="MMM Do YYYY">
-                  {articles.data[0].attributes.published_at}
+              </div>
+
+              
+
+              <p className="font-avenir text-md uppercase font-semibold text-gray-500 pb-16">
+                <span className="lowercase">Article released:{" "}</span>
+                
+                <br />
+
+                <Moment format="Do MMM YYYY">
+                    {articles.data[0].attributes.published_at}
                 </Moment>
               </p>
               
-              <img src={imageUrl} />
+              <img src={imageUrl} alt={articles.data[0].attributes.title} />
 
-              <div className="">
+              <div className="py-16">
 
                 <div className="">
 
